@@ -81,6 +81,7 @@
             font-size: 20px; /* Increased font size */
             font-family: 'Roboto', sans-serif; /* Changed font */
             border: none; /* Removed border */
+            cursor: pointer; /* Added cursor pointer */
         }
         .btn:hover {
             background-color: #cc0000;
@@ -107,10 +108,47 @@
             font-weight: 300;
             font-family: 'Roboto', sans-serif;
         }
+        .signup {
+            background-color: #333333;
+            color: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .signup form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .signup input[type="email"] {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .signup input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff4d4d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .signup input[type="submit"]:hover {
+            background-color: #cc0000;
+        }
+        .success-message {
+            color: #fff;
+            font-size: 24px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
-    <section class="hero">
+    <section class="hero" id="hero">
         <video autoplay muted loop>
             <source src="AutoMateAI-Bg-Main-4k-2.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -118,30 +156,50 @@
         <div class="container">
             <h1>AutoMate AI</h1>
             <p class="coming-soon">Coming August 2024</p>
-            <a href="#" class="btn">Be Among the First to Experience It</a>
+            <a href="#signup" class="btn">Be Among the First to Experience It</a>
         </div>
     </section>
 
     <section class="features">
         <div class="container">
-            <p class="revolutionize-text">Revolutionize your business with our intuitive AI building tool.</p>
+            <h1>AutoMate AI</h1> <!-- Duplicated title -->
+            <p class="revolutionize-text">Empower yourself with our intuitive AI building tool.</p> <!-- Updated text -->
             <p class="revolutionize-text">No coding required.</p>
             <div class="feature">
-                <img src="AutoMateAI-Easy.jpg">
+                <img src="AutoMateAI-Easy-3.jpg">
                 <h2>Easy to Use</h2>
                 <p>Build AI models effortlessly with our user-friendly interface.</p>
             </div>
             <div class="feature">
-                <img src="AutoMateAI-NoCode.jpg">
+                <img src="AutoMateAI-NoCode-2.jpg">
                 <h2>No Coding Required</h2>
                 <p>Create powerful AI solutions without writing a single line of code.</p>
             </div>
             <div class="feature">
-                <img src="AutoMateAI-ComingSoon.jpg">
+                <img src="AutoMateAI-ComingSoon-1.png">
                 <h2>Coming August 2024</h2>
                 <p>Get ready for the future of AI. Sign up now for early access!</p>
             </div>
         </div>
     </section>
+
+    <section class="signup" id="signup">
+        <h2>Stay Updated</h2>
+        <p>Subscribe to our newsletter to receive the latest news and updates about AutoMate AI.</p>
+        <form action="#" method="post" id="signupForm">
+            <input type="email" name="email" placeholder="Your email address" required>
+            <input type="submit" value="Subscribe">
+        </form>
+        <p class="success-message" id="successMessage" style="display: none;">Thank you for subscribing!</p>
+    </section>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            // Simulate form submission success
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('signupForm').reset(); // Reset form fields
+        });
+    </script>
 </body>
 </html>
